@@ -1,12 +1,12 @@
 {
   "version": "1",
   "metadata": {
-    "marimo_version": "0.17.8"
+    "marimo_version": "0.18.4"
   },
   "cells": [
     {
       "id": "Hbol",
-      "code_hash": "5d1879833e3d8338a7dad81b19a077d7",
+      "code_hash": "b450b90128c04e582010b8fac9e2465a",
       "outputs": [
         {
           "type": "data",
@@ -19,6 +19,19 @@
     },
     {
       "id": "MJUe",
+      "code_hash": "5d1879833e3d8338a7dad81b19a077d7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
       "code_hash": "4ee86fc1ab85d8edbc4a8d4f107a725e",
       "outputs": [
         {
@@ -31,7 +44,7 @@
       "console": []
     },
     {
-      "id": "lEQa",
+      "id": "bkHC",
       "code_hash": "c743a36834a5c302f956efcda4199c01",
       "outputs": [
         {
@@ -44,7 +57,7 @@
       "console": []
     },
     {
-      "id": "PKri",
+      "id": "lEQa",
       "code_hash": "c5ed6c066422aeb7c96fc4a616863564",
       "outputs": [
         {
@@ -57,7 +70,7 @@
       "console": []
     },
     {
-      "id": "Xref",
+      "id": "PKri",
       "code_hash": "6468e97af3ebe089e67532a01bb22bc9",
       "outputs": [
         {
@@ -70,27 +83,7 @@
       "console": []
     },
     {
-      "id": "SFPL",
-      "code_hash": "ca750260038205c407c0034c20e71484",
-      "outputs": [
-        {
-          "type": "error",
-          "ename": "syntax",
-          "evalue": "line 4\n    readme_content_to_write = \"\"\"The project aims to develop a comprehensive solution for product recommendation, OCR-based query processing, and image-based product detection, divided into four main modules:\n                              ^\nSyntaxError: unterminated triple-quoted string literal (detected at line 19)\n",
-          "traceback": []
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_363825/__marimo__cell_SFPL_.py&quot;</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"k\">with</span> <span class=\"nb\">open</span><span class=\"p\">(</span><span class=\"s1\">&#39;/content/ds_task_1ab/README.md&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;r&#39;</span><span class=\"p\">)</span> <span class=\"k\">as</span> <span class=\"n\">file</span><span class=\"p\">:</span>\n<span class=\"w\">         </span><span class=\"pm\">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>\n<span class=\"gr\">FileNotFoundError</span>: <span class=\"n\">[Errno 2] No such file or directory: &#39;/content/ds_task_1ab/README.md&#39;</span>\n</pre></div>\n</span>",
-          "mimetype": "application/vnd.marimo+traceback"
-        }
-      ]
-    },
-    {
-      "id": "BYtC",
+      "id": "Xref",
       "code_hash": "edb95c14127c0bc583832421ff8454a2",
       "outputs": [
         {
@@ -103,7 +96,7 @@
       "console": []
     },
     {
-      "id": "RGSE",
+      "id": "SFPL",
       "code_hash": "cf1f4efb505ae0dc2554d739e72a358d",
       "outputs": [
         {
@@ -116,7 +109,7 @@
       "console": []
     },
     {
-      "id": "Kclp",
+      "id": "BYtC",
       "code_hash": "e41032c3e482ca06f9439204c049b2a5",
       "outputs": [
         {
@@ -129,7 +122,7 @@
       "console": []
     },
     {
-      "id": "emfo",
+      "id": "RGSE",
       "code_hash": "838d2d3ff23f84eb3e06f2f5e5457726",
       "outputs": [
         {
@@ -142,7 +135,7 @@
       "console": []
     },
     {
-      "id": "Hstk",
+      "id": "Kclp",
       "code_hash": "b8254a0ffb5f436dce3e98735078200c",
       "outputs": [
         {
@@ -155,7 +148,7 @@
       "console": []
     },
     {
-      "id": "nWHF",
+      "id": "emfo",
       "code_hash": "9f8be6856ec45ca3f4b5e136a66f9685",
       "outputs": [
         {
@@ -168,39 +161,53 @@
       "console": []
     },
     {
+      "id": "Hstk",
+      "code_hash": "f743df8786665002456538a0f70aca2a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n--- df_dataset Head ---\n\n  InvoiceNo StockCode                           Description Quantity  \\\n0    536365    85123A    WHITE HANGING HEART T-LIGHT HOLDER        6   \n1    536365     71053                   WHITE METAL LANTERN        6   \n2    536365  \u00f684406B^        CREAM CUPID HEARTS COAT HANGER        8   \n3    536365    84029G  $KNITTED UNION FLAG HOT WATER BOTTLE       6@   \n4    536365    84029E       $RED WOOLLY HOTTIE WHITE HEART.       6@   \n\n           InvoiceDate UnitPrice CustomerID              Country  \n0  2010-12-01 08:26:00      2.55    17850.0  XxYUnited Kingdom\u263a\ufe0f  \n1  2010-12-01 08:26:00      3.39    17850.0       United Kingdom  \n2  2010-12-01 08:26:00      2.75  &17850.0#  XxYUnited Kingdom\u263a\ufe0f  \n3  2010-12-01 08:26:00      3.39    17850.0       United Kingdom  \n4  2010-12-01 08:26:00      3.39  &17850.0#       United Kingdom  \n\n--- df_dataset Info ---\n\n<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 541909 entries, 0 to 541908\nData columns (total 8 columns):\n #   Column       Non-Null Count   Dtype \n---  ------       --------------   ----- \n 0   InvoiceNo    541909 non-null  object\n 1   StockCode    541909 non-null  object\n 2   Description  540884 non-null  object\n 3   Quantity     541909 non-null  object\n 4   InvoiceDate  541909 non-null  object\n 5   UnitPrice    541909 non-null  object\n 6   CustomerID   433909 non-null  object\n 7   Country      541909 non-null  object\ndtypes: object(8)\nmemory usage: 33.1+ MB\n\n--- df_cnn_train_data Head ---\n\n  StockCode\n0   \u00f622384^\n1   \u00f622727^\n2   \u00f622112^\n3   \u00f623298^\n4   \u00f620726^\n\n--- df_cnn_train_data Info ---\n\n<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 10 entries, 0 to 9\nData columns (total 1 columns):\n #   Column     Non-Null Count  Dtype \n---  ------     --------------  ----- \n 0   StockCode  10 non-null     object\ndtypes: object(1)\nmemory usage: 212.0+ bytes\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "5c2ec32ccc05309a70417857eba46952",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"initial-data-inspection-summary\">Initial Data Inspection Summary</h3>\n<span class=\"paragraph\"><strong>df_dataset:</strong></span>\n<ul>\n<li><strong>Rows and Columns</strong>: The <code>df_dataset</code> DataFrame contains 541,909 entries and 8 columns.</li>\n<li><strong>Data Types</strong>: All columns are currently of <code>object</code> dtype, which suggests that some columns that should be numerical (e.g., <code>Quantity</code>, <code>UnitPrice</code>, <code>CustomerID</code>) or datetime (<code>InvoiceDate</code>) need type conversion.</li>\n<li>\n<span class=\"paragraph\"><strong>Missing Values</strong>:</span>\n<ul>\n<li><code>Description</code>: 540,884 non-null values out of 541,909, indicating ~1,025 missing values.</li>\n<li><code>CustomerID</code>: 433,909 non-null values out of 541,909, indicating ~108,000 missing values.</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\"><strong>Data Anomalies/Special Characters</strong>:</span>\n<ul>\n<li><code>StockCode</code>: Contains special characters like <code>\u00f6</code> and <code>^</code> (e.g., <code>\u00f684406B^</code>).</li>\n<li><code>Quantity</code>: Contains special characters like <code>@</code> (e.g., <code>6@</code>).</li>\n<li><code>CustomerID</code>: Contains special characters like <code>&amp;</code> and <code>#</code> (e.g., <code>&amp;17850.0#</code>).</li>\n<li><code>Country</code>: Contains special characters like <code>X</code>, <code>x</code>, <code>Y</code>, <code>y</code>, and emojis (e.g., <code>XxYUnited Kingdom\u263a\ufe0f</code>).</li>\n<li><code>InvoiceNo</code>: Contains numerical values and also appears to have 'object' type which might indicate non-numeric entries, possibly for cancelled orders (not explicitly seen in head, but common in such datasets).</li>\n<li><code>UnitPrice</code>: Appears to be a float but is of 'object' type, suggesting possible non-numeric entries or formatting issues.</li>\n</ul>\n</li>\n</ul>\n<span class=\"paragraph\"><strong>df_cnn_train_data:</strong></span>\n<ul>\n<li><strong>Rows and Columns</strong>: The <code>df_cnn_train_data</code> DataFrame is small, with 10 entries and 1 column.</li>\n<li><strong>Data Types</strong>: The <code>StockCode</code> column is of <code>object</code> dtype.</li>\n<li><strong>Missing Values</strong>: No missing values.</li>\n<li>\n<span class=\"paragraph\"><strong>Data Anomalies/Special Characters</strong>:</span>\n<ul>\n<li><code>StockCode</code>: Contains special characters like <code>\u00f6</code> and <code>^</code> (e.g., <code>\u00f622384^</code>).</li>\n</ul>\n</li>\n</ul>\n<span class=\"paragraph\"><strong>Next Steps based on Initial Inspection:</strong>\nBased on these observations, significant data cleaning will be required for <code>df_dataset</code> to address incorrect data types, missing values, and special characters. <code>df_cnn_train_data</code> also requires cleaning of special characters in <code>StockCode</code>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "iLit",
-      "code_hash": "1f4775928b3062312142fef625403b51",
-      "outputs": [],
+      "code_hash": "5c2ec32ccc05309a70417857eba46952",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"initial-data-inspection-summary\">Initial Data Inspection Summary</h3>\n<span class=\"paragraph\"><strong>df_dataset:</strong></span>\n<ul>\n<li><strong>Rows and Columns</strong>: The <code>df_dataset</code> DataFrame contains 541,909 entries and 8 columns.</li>\n<li><strong>Data Types</strong>: All columns are currently of <code>object</code> dtype, which suggests that some columns that should be numerical (e.g., <code>Quantity</code>, <code>UnitPrice</code>, <code>CustomerID</code>) or datetime (<code>InvoiceDate</code>) need type conversion.</li>\n<li>\n<span class=\"paragraph\"><strong>Missing Values</strong>:</span>\n<ul>\n<li><code>Description</code>: 540,884 non-null values out of 541,909, indicating ~1,025 missing values.</li>\n<li><code>CustomerID</code>: 433,909 non-null values out of 541,909, indicating ~108,000 missing values.</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\"><strong>Data Anomalies/Special Characters</strong>:</span>\n<ul>\n<li><code>StockCode</code>: Contains special characters like <code>\u00f6</code> and <code>^</code> (e.g., <code>\u00f684406B^</code>).</li>\n<li><code>Quantity</code>: Contains special characters like <code>@</code> (e.g., <code>6@</code>).</li>\n<li><code>CustomerID</code>: Contains special characters like <code>&amp;</code> and <code>#</code> (e.g., <code>&amp;17850.0#</code>).</li>\n<li><code>Country</code>: Contains special characters like <code>X</code>, <code>x</code>, <code>Y</code>, <code>y</code>, and emojis (e.g., <code>XxYUnited Kingdom\u263a\ufe0f</code>).</li>\n<li><code>InvoiceNo</code>: Contains numerical values and also appears to have 'object' type which might indicate non-numeric entries, possibly for cancelled orders (not explicitly seen in head, but common in such datasets).</li>\n<li><code>UnitPrice</code>: Appears to be a float but is of 'object' type, suggesting possible non-numeric entries or formatting issues.</li>\n</ul>\n</li>\n</ul>\n<span class=\"paragraph\"><strong>df_cnn_train_data:</strong></span>\n<ul>\n<li><strong>Rows and Columns</strong>: The <code>df_cnn_train_data</code> DataFrame is small, with 10 entries and 1 column.</li>\n<li><strong>Data Types</strong>: The <code>StockCode</code> column is of <code>object</code> dtype.</li>\n<li><strong>Missing Values</strong>: No missing values.</li>\n<li>\n<span class=\"paragraph\"><strong>Data Anomalies/Special Characters</strong>:</span>\n<ul>\n<li><code>StockCode</code>: Contains special characters like <code>\u00f6</code> and <code>^</code> (e.g., <code>\u00f622384^</code>).</li>\n</ul>\n</li>\n</ul>\n<span class=\"paragraph\"><strong>Next Steps based on Initial Inspection:</strong>\nBased on these observations, significant data cleaning will be required for <code>df_dataset</code> to address incorrect data types, missing values, and special characters. <code>df_cnn_train_data</code> also requires cleaning of special characters in <code>StockCode</code>.</span></span>"
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "ZHCJ",
-      "code_hash": "5c2ec32ccc05309a70417857eba46952",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"initial-data-inspection-summary\">Initial Data Inspection Summary</h3>\n<span class=\"paragraph\"><strong>df_dataset:</strong></span>\n<ul>\n<li><strong>Rows and Columns</strong>: The <code>df_dataset</code> DataFrame contains 541,909 entries and 8 columns.</li>\n<li><strong>Data Types</strong>: All columns are currently of <code>object</code> dtype, which suggests that some columns that should be numerical (e.g., <code>Quantity</code>, <code>UnitPrice</code>, <code>CustomerID</code>) or datetime (<code>InvoiceDate</code>) need type conversion.</li>\n<li>\n<span class=\"paragraph\"><strong>Missing Values</strong>:</span>\n<ul>\n<li><code>Description</code>: 540,884 non-null values out of 541,909, indicating ~1,025 missing values.</li>\n<li><code>CustomerID</code>: 433,909 non-null values out of 541,909, indicating ~108,000 missing values.</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\"><strong>Data Anomalies/Special Characters</strong>:</span>\n<ul>\n<li><code>StockCode</code>: Contains special characters like <code>\u00f6</code> and <code>^</code> (e.g., <code>\u00f684406B^</code>).</li>\n<li><code>Quantity</code>: Contains special characters like <code>@</code> (e.g., <code>6@</code>).</li>\n<li><code>CustomerID</code>: Contains special characters like <code>&amp;</code> and <code>#</code> (e.g., <code>&amp;17850.0#</code>).</li>\n<li><code>Country</code>: Contains special characters like <code>X</code>, <code>x</code>, <code>Y</code>, <code>y</code>, and emojis (e.g., <code>XxYUnited Kingdom\u263a\ufe0f</code>).</li>\n<li><code>InvoiceNo</code>: Contains numerical values and also appears to have 'object' type which might indicate non-numeric entries, possibly for cancelled orders (not explicitly seen in head, but common in such datasets).</li>\n<li><code>UnitPrice</code>: Appears to be a float but is of 'object' type, suggesting possible non-numeric entries or formatting issues.</li>\n</ul>\n</li>\n</ul>\n<span class=\"paragraph\"><strong>df_cnn_train_data:</strong></span>\n<ul>\n<li><strong>Rows and Columns</strong>: The <code>df_cnn_train_data</code> DataFrame is small, with 10 entries and 1 column.</li>\n<li><strong>Data Types</strong>: The <code>StockCode</code> column is of <code>object</code> dtype.</li>\n<li><strong>Missing Values</strong>: No missing values.</li>\n<li>\n<span class=\"paragraph\"><strong>Data Anomalies/Special Characters</strong>:</span>\n<ul>\n<li><code>StockCode</code>: Contains special characters like <code>\u00f6</code> and <code>^</code> (e.g., <code>\u00f622384^</code>).</li>\n</ul>\n</li>\n</ul>\n<span class=\"paragraph\"><strong>Next Steps based on Initial Inspection:</strong>\nBased on these observations, significant data cleaning will be required for <code>df_dataset</code> to address incorrect data types, missing values, and special characters. <code>df_cnn_train_data</code> also requires cleaning of special characters in <code>StockCode</code>.</span></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "ROlb",
-      "code_hash": "5c2ec32ccc05309a70417857eba46952",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"initial-data-inspection-summary\">Initial Data Inspection Summary</h3>\n<span class=\"paragraph\"><strong>df_dataset:</strong></span>\n<ul>\n<li><strong>Rows and Columns</strong>: The <code>df_dataset</code> DataFrame contains 541,909 entries and 8 columns.</li>\n<li><strong>Data Types</strong>: All columns are currently of <code>object</code> dtype, which suggests that some columns that should be numerical (e.g., <code>Quantity</code>, <code>UnitPrice</code>, <code>CustomerID</code>) or datetime (<code>InvoiceDate</code>) need type conversion.</li>\n<li>\n<span class=\"paragraph\"><strong>Missing Values</strong>:</span>\n<ul>\n<li><code>Description</code>: 540,884 non-null values out of 541,909, indicating ~1,025 missing values.</li>\n<li><code>CustomerID</code>: 433,909 non-null values out of 541,909, indicating ~108,000 missing values.</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\"><strong>Data Anomalies/Special Characters</strong>:</span>\n<ul>\n<li><code>StockCode</code>: Contains special characters like <code>\u00f6</code> and <code>^</code> (e.g., <code>\u00f684406B^</code>).</li>\n<li><code>Quantity</code>: Contains special characters like <code>@</code> (e.g., <code>6@</code>).</li>\n<li><code>CustomerID</code>: Contains special characters like <code>&amp;</code> and <code>#</code> (e.g., <code>&amp;17850.0#</code>).</li>\n<li><code>Country</code>: Contains special characters like <code>X</code>, <code>x</code>, <code>Y</code>, <code>y</code>, and emojis (e.g., <code>XxYUnited Kingdom\u263a\ufe0f</code>).</li>\n<li><code>InvoiceNo</code>: Contains numerical values and also appears to have 'object' type which might indicate non-numeric entries, possibly for cancelled orders (not explicitly seen in head, but common in such datasets).</li>\n<li><code>UnitPrice</code>: Appears to be a float but is of 'object' type, suggesting possible non-numeric entries or formatting issues.</li>\n</ul>\n</li>\n</ul>\n<span class=\"paragraph\"><strong>df_cnn_train_data:</strong></span>\n<ul>\n<li><strong>Rows and Columns</strong>: The <code>df_cnn_train_data</code> DataFrame is small, with 10 entries and 1 column.</li>\n<li><strong>Data Types</strong>: The <code>StockCode</code> column is of <code>object</code> dtype.</li>\n<li><strong>Missing Values</strong>: No missing values.</li>\n<li>\n<span class=\"paragraph\"><strong>Data Anomalies/Special Characters</strong>:</span>\n<ul>\n<li><code>StockCode</code>: Contains special characters like <code>\u00f6</code> and <code>^</code> (e.g., <code>\u00f622384^</code>).</li>\n</ul>\n</li>\n</ul>\n<span class=\"paragraph\"><strong>Next Steps based on Initial Inspection:</strong>\nBased on these observations, significant data cleaning will be required for <code>df_dataset</code> to address incorrect data types, missing values, and special characters. <code>df_cnn_train_data</code> also requires cleaning of special characters in <code>StockCode</code>.</span></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "qnkX",
       "code_hash": "91462066003cefd223597796f7a239eb",
       "outputs": [
         {
@@ -213,7 +220,7 @@
       "console": []
     },
     {
-      "id": "TqIu",
+      "id": "ROlb",
       "code_hash": "b39ef0f643f1f15d30c560250716f2eb",
       "outputs": [
         {
@@ -226,13 +233,20 @@
       "console": []
     },
     {
-      "id": "Vxnm",
+      "id": "qnkX",
       "code_hash": "ad98e716e035ea7c5f479477171f2471",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "DnEU",
+      "id": "TqIu",
       "code_hash": "08cbe9554759285542955c48938fe477",
       "outputs": [
         {
@@ -245,13 +259,27 @@
       "console": []
     },
     {
-      "id": "ulZA",
+      "id": "Vxnm",
       "code_hash": "020ccac371a63f337876bdaafb1d5a0c",
-      "outputs": [],
-      "console": []
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "--- df_dataset Quantity Info after cleaning ---\n<class 'pandas.core.series.Series'>\nRangeIndex: 541909 entries, 0 to 541908\nSeries name: Quantity\nNon-Null Count   Dtype\n--------------   -----\n541909 non-null  int64\ndtypes: int64(1)\nmemory usage: 4.1 MB\n--- df_dataset Quantity head after cleaning ---\n0    6\n1    6\n2    8\n3    6\n4    6\nName: Quantity, dtype: int64\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
-      "id": "ecfG",
+      "id": "DnEU",
       "code_hash": "7a823ad4f4f93de0d43d9585f0585bbb",
       "outputs": [
         {
@@ -264,13 +292,27 @@
       "console": []
     },
     {
-      "id": "Pvdt",
+      "id": "ulZA",
       "code_hash": "1b0e355a3eddef42cebcba6e8751bf04",
-      "outputs": [],
-      "console": []
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "---> df_dataset UnitPrice Info after cleaning ---\n<class 'pandas.core.series.Series'>\nRangeIndex: 541909 entries, 0 to 541908\nSeries name: UnitPrice\nNon-Null Count   Dtype  \n--------------   -----  \n433290 non-null  float64\ndtypes: float64(1)\nmemory usage: 4.1 MB\n---> df_dataset UnitPrice head after cleaning ---\n0    2.55\n1    3.39\n2    2.75\n3    3.39\n4    3.39\nName: UnitPrice, dtype: float64\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
-      "id": "ZBYS",
+      "id": "ecfG",
       "code_hash": "6310417c8de904f1c37a9a0e2e4617a6",
       "outputs": [
         {
@@ -283,13 +325,13 @@
       "console": []
     },
     {
-      "id": "aLJB",
+      "id": "Pvdt",
       "code_hash": "06f46301dbc1e9e14fcdeaaaee2a0504",
       "outputs": [],
       "console": []
     },
     {
-      "id": "nHfw",
+      "id": "ZBYS",
       "code_hash": "95c6fb947f322c5a9ca2e38164e3d83b",
       "outputs": [
         {
@@ -302,13 +344,13 @@
       "console": []
     },
     {
-      "id": "xXTn",
+      "id": "aLJB",
       "code_hash": "334223d2659eb5caa248602ca5c6ea9a",
       "outputs": [],
       "console": []
     },
     {
-      "id": "AjVT",
+      "id": "nHfw",
       "code_hash": "1f1d8f908cb81bb84188270d37aa80e2",
       "outputs": [
         {
@@ -321,13 +363,13 @@
       "console": []
     },
     {
-      "id": "pHFh",
+      "id": "xXTn",
       "code_hash": "17db077c5963911f28f0f8e59a56dbd6",
       "outputs": [],
       "console": []
     },
     {
-      "id": "NCOB",
+      "id": "AjVT",
       "code_hash": "19512a7e7b9113b590c870c417e1231b",
       "outputs": [
         {
@@ -340,13 +382,13 @@
       "console": []
     },
     {
-      "id": "aqbW",
+      "id": "pHFh",
       "code_hash": "31157eae833983ccf74624b19a954bb6",
       "outputs": [],
       "console": []
     },
     {
-      "id": "TRpd",
+      "id": "NCOB",
       "code_hash": "99b4678f16d83e2e0ed6dbcd9fa59f37",
       "outputs": [
         {
@@ -359,13 +401,27 @@
       "console": []
     },
     {
-      "id": "TXez",
+      "id": "aqbW",
       "code_hash": "36c3bdaea40a436d5c108b97cb82ef2e",
-      "outputs": [],
-      "console": []
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "--- df_dataset Country head after cleaning ---\n0    United Kingdom\n1    United Kingdom\n2    United Kingdom\n3    United Kingdom\n4    United Kingdom\nName: Country, dtype: object\n\n--- Unique countries after cleaning ---\n['United Kingdom' 'France' 'Australia' 'Netherlands' 'German' 'Norwa'\n 'Eire' 'Switzerland' 'Spain' 'Poland' 'Portugal' 'Ital' 'Belgium'\n 'Lithuania' 'Japan' 'Iceland' 'Channel Islands' 'Denmark' 'Cprus'\n 'Sweden' 'Austria' 'Israel' 'Finland' 'Bahrain' 'Greece' 'Hong Kong'\n 'Singapore' 'Lebanon' 'United Arab Emirates' 'Saudi Arabia'\n 'Czech Republic' 'Canada' 'Unspecified' 'Brazil' 'Usa'\n 'European Communit' 'Malta' 'Rsa']\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
-      "id": "dNNg",
+      "id": "TRpd",
       "code_hash": "98881e19ade7898b5884659a85d9068d",
       "outputs": [
         {
@@ -378,13 +434,13 @@
       "console": []
     },
     {
-      "id": "yCnT",
+      "id": "TXez",
       "code_hash": "3017a2e1cc7ffa1a188bb586da65b1f0",
       "outputs": [],
       "console": []
     },
     {
-      "id": "wlCL",
+      "id": "dNNg",
       "code_hash": "cc4878cb583734c345de2e624d253c5e",
       "outputs": [
         {
@@ -397,13 +453,13 @@
       "console": []
     },
     {
-      "id": "kqZH",
+      "id": "yCnT",
       "code_hash": "47010950850c9d0e1f13b61a5d9bde85",
       "outputs": [],
       "console": []
     },
     {
-      "id": "wAgl",
+      "id": "wlCL",
       "code_hash": "3f76abbaa6529ed50e6fd980659bfeff",
       "outputs": [
         {
@@ -416,13 +472,13 @@
       "console": []
     },
     {
-      "id": "rEll",
+      "id": "kqZH",
       "code_hash": "6d06308e1d615556bd7459be74c33bd7",
       "outputs": [],
       "console": []
     },
     {
-      "id": "dGlV",
+      "id": "wAgl",
       "code_hash": "c87edb3a0320db721525e0abcc9a2952",
       "outputs": [
         {
@@ -435,13 +491,27 @@
       "console": []
     },
     {
-      "id": "SdmI",
+      "id": "rEll",
       "code_hash": "7ecce36a0e2473609be4bf051ee8247a",
-      "outputs": [],
-      "console": []
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "--- Duplicate Rows Removed: 674 ---\n--- df_dataset Info after removing duplicates ---\n<class 'pandas.core.frame.DataFrame'>\nIndex: 541235 entries, 0 to 541908\nData columns (total 8 columns):\n #   Column       Non-Null Count   Dtype  \n---  ------       --------------   -----  \n 0   InvoiceNo    541235 non-null  object \n 1   StockCode    541235 non-null  object \n 2   Description  541235 non-null  object \n 3   Quantity     541235 non-null  int64  \n 4   InvoiceDate  541235 non-null  object \n 5   UnitPrice    432648 non-null  float64\n 6   CustomerID   541235 non-null  object \n 7   Country      541235 non-null  object \ndtypes: float64(1), int64(1), object(6)\nmemory usage: 37.2+ MB\n--- df_dataset head after removing duplicates ---\n  InvoiceNo StockCode                          Description  Quantity  \\\n0    536365    85123A    white hanging heart tlight holder         6   \n1    536365     71053                  white metal lantern         6   \n2    536365  \u00f684406B^       cream cupid hearts coat hanger         8   \n3    536365    84029G  knitted union flag hot water bottle         6   \n4    536365    84029E        red woolly hottie white heart         6   \n\n           InvoiceDate  UnitPrice CustomerID         Country  \n0  2010-12-01 08:26:00       2.55    17850.0  United Kingdom  \n1  2010-12-01 08:26:00       3.39    17850.0  United Kingdom  \n2  2010-12-01 08:26:00       2.75  &17850.0#  United Kingdom  \n3  2010-12-01 08:26:00       3.39    17850.0  United Kingdom  \n4  2010-12-01 08:26:00       3.39  &17850.0#  United Kingdom  \n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
-      "id": "lgWD",
+      "id": "dGlV",
       "code_hash": "ef3d9b794c844cafccfd3f01fc843ea2",
       "outputs": [
         {
@@ -454,7 +524,7 @@
       "console": []
     },
     {
-      "id": "yOPj",
+      "id": "SdmI",
       "code_hash": "7f220ade43d65c90b4106dc79c490977",
       "outputs": [
         {
@@ -467,19 +537,40 @@
       "console": []
     },
     {
-      "id": "fwwy",
+      "id": "lgWD",
       "code_hash": "75339157d75d5cf49a7deb37cc9623f7",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "pinecone library installation initiated.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "yOPj",
+      "code_hash": "4c55e737e1aa8228d2f88e3f4be13ee0",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "syntax",
+          "evalue": "line 12\nSyntaxError: 'return' outside function\n",
+          "traceback": []
+        }
+      ],
       "console": []
     },
     {
-      "id": "LJZf",
-      "code_hash": "4111c40d3f3af884ef6d25200ca529a4",
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "urSm",
+      "id": "fwwy",
       "code_hash": "55bf94a07f6bb04648fce8d45026c196",
       "outputs": [
         {
@@ -492,7 +583,7 @@
       "console": []
     },
     {
-      "id": "jxvo",
+      "id": "LJZf",
       "code_hash": "8e3b334d047c5b1cc44f16ebe9488ac4",
       "outputs": [
         {
@@ -505,7 +596,7 @@
       "console": []
     },
     {
-      "id": "mWxS",
+      "id": "urSm",
       "code_hash": "280be8c2af82ff35c883f8a6f700710c",
       "outputs": [
         {
@@ -518,13 +609,13 @@
       "console": []
     },
     {
-      "id": "CcZR",
-      "code_hash": "99bc4d5327f62400958ef38587cf4592",
+      "id": "jxvo",
+      "code_hash": "90066cab79e899d7a973b9e4af96aee2",
       "outputs": [],
       "console": []
     },
     {
-      "id": "YWSi",
+      "id": "mWxS",
       "code_hash": "bdeda95442ed36ad9f0de199ae4ac871",
       "outputs": [
         {
@@ -537,7 +628,7 @@
       "console": []
     },
     {
-      "id": "zlud",
+      "id": "CcZR",
       "code_hash": "8ba8d3316c93edba08d397d49089e225",
       "outputs": [
         {
@@ -550,7 +641,7 @@
       "console": []
     },
     {
-      "id": "tZnO",
+      "id": "YWSi",
       "code_hash": "b7e76758023b262c4101683425667475",
       "outputs": [
         {
@@ -563,7 +654,7 @@
       "console": []
     },
     {
-      "id": "xvXZ",
+      "id": "zlud",
       "code_hash": "468b6fbf4a55faaa0511bdad7fdb6389",
       "outputs": [
         {
@@ -576,7 +667,7 @@
       "console": []
     },
     {
-      "id": "CLip",
+      "id": "tZnO",
       "code_hash": "e44b83fd2764ce4e05ca0902342ad1a9",
       "outputs": [
         {
@@ -589,7 +680,7 @@
       "console": []
     },
     {
-      "id": "YECM",
+      "id": "xvXZ",
       "code_hash": "00bebaef5b7ba1a4b255095c2a2a0266",
       "outputs": [
         {
@@ -602,19 +693,47 @@
       "console": []
     },
     {
-      "id": "cEAS",
+      "id": "CLip",
       "code_hash": "a694d55ba5f69015f60ed105f9a02bf8",
-      "outputs": [],
-      "console": []
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "--- df_dataset Description head after comprehensive cleaning ---\n0      white hanging heart tlight holder\n1                    white metal lantern\n2         cream cupid hearts coat hanger\n3    knitted union flag hot water bottle\n4          red woolly hottie white heart\nName: Description, dtype: object\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
-      "id": "iXej",
+      "id": "YECM",
       "code_hash": "55ba0e5bb53ed968aa55f4636039e392",
-      "outputs": [],
-      "console": []
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "--- Verified df_dataset Description column (head) ---\n0      white hanging heart tlight holder\n1                    white metal lantern\n2         cream cupid hearts coat hanger\n3    knitted union flag hot water bottle\n4          red woolly hottie white heart\nName: Description, dtype: object\n\n--- Verified df_dataset Info (after all cleaning) ---\n<class 'pandas.core.frame.DataFrame'>\nIndex: 541235 entries, 0 to 541908\nData columns (total 8 columns):\n #   Column       Non-Null Count   Dtype  \n---  ------       --------------   -----  \n 0   InvoiceNo    541235 non-null  object \n 1   StockCode    541235 non-null  object \n 2   Description  541235 non-null  object \n 3   Quantity     541235 non-null  int64  \n 4   InvoiceDate  541235 non-null  object \n 5   UnitPrice    432648 non-null  float64\n 6   CustomerID   541235 non-null  object \n 7   Country      541235 non-null  object \ndtypes: float64(1), int64(1), object(6)\nmemory usage: 37.2+ MB\n\n--- Verified df_dataset Head (after all cleaning) ---\n  InvoiceNo StockCode                          Description  Quantity  \\\n0    536365    85123A    white hanging heart tlight holder         6   \n1    536365     71053                  white metal lantern         6   \n2    536365  \u00f684406B^       cream cupid hearts coat hanger         8   \n3    536365    84029G  knitted union flag hot water bottle         6   \n4    536365    84029E        red woolly hottie white heart         6   \n\n           InvoiceDate  UnitPrice CustomerID         Country  \n0  2010-12-01 08:26:00       2.55    17850.0  United Kingdom  \n1  2010-12-01 08:26:00       3.39    17850.0  United Kingdom  \n2  2010-12-01 08:26:00       2.75  &17850.0#  United Kingdom  \n3  2010-12-01 08:26:00       3.39    17850.0  United Kingdom  \n4  2010-12-01 08:26:00       3.39  &17850.0#  United Kingdom  \n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
-      "id": "EJmg",
+      "id": "cEAS",
       "code_hash": "20dd76d7bdb5e608f8acfc12e7d8c810",
       "outputs": [
         {
@@ -627,7 +746,7 @@
       "console": []
     },
     {
-      "id": "UmEG",
+      "id": "iXej",
       "code_hash": "71d7da72773b52ee67084293d955a56a",
       "outputs": [
         {
@@ -640,7 +759,7 @@
       "console": []
     },
     {
-      "id": "vEBW",
+      "id": "EJmg",
       "code_hash": "b56ed20c15e8551b1adb1ae9960fed61",
       "outputs": [
         {
@@ -653,7 +772,7 @@
       "console": []
     },
     {
-      "id": "kLmu",
+      "id": "UmEG",
       "code_hash": "eeac270a4bbd73fe636c6b53132c61ee",
       "outputs": [
         {
@@ -666,7 +785,7 @@
       "console": []
     },
     {
-      "id": "IpqN",
+      "id": "vEBW",
       "code_hash": "5d8650dfd35d269fd9e5b4e4d6183a1a",
       "outputs": [
         {
@@ -679,7 +798,7 @@
       "console": []
     },
     {
-      "id": "dxZZ",
+      "id": "kLmu",
       "code_hash": "f1c228e5826a348a2e8b4ffa8301b2c4",
       "outputs": [
         {
@@ -692,7 +811,7 @@
       "console": []
     },
     {
-      "id": "dlnW",
+      "id": "IpqN",
       "code_hash": "392de50942517e2d031c062d0c69eba8",
       "outputs": [
         {
@@ -705,7 +824,7 @@
       "console": []
     },
     {
-      "id": "TTti",
+      "id": "dxZZ",
       "code_hash": "441c70a5523ef4dd8058fb95b52584e9",
       "outputs": [
         {
@@ -718,13 +837,13 @@
       "console": []
     },
     {
-      "id": "RKFZ",
+      "id": "dlnW",
       "code_hash": "7e64a52f740052a971c5bdf480d25245",
       "outputs": [],
       "console": []
     },
     {
-      "id": "IaQp",
+      "id": "TTti",
       "code_hash": "9dc023b9ddf20f6ce8745b9cb4d699be",
       "outputs": [
         {
@@ -737,13 +856,33 @@
       "console": []
     },
     {
-      "id": "IWgg",
-      "code_hash": "f0f55be3b222440a0080fe0e0d767118",
+      "id": "RKFZ",
+      "code_hash": "4149dd2956e52d4abf129a4b7aaaa0b7",
       "outputs": [],
       "console": []
     },
     {
-      "id": "fCoF",
+      "id": "IaQp",
+      "code_hash": "792e0bccd7957a416d640c7c0e4f42a9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "GOOGLE_API_KEY not set in environment. Skipping Google Generative AI configuration. Set GOOGLE_API_KEY to enable embeddings with Gemini.\nGoogle Generative AI client configured (api key sourced from env).\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "IWgg",
       "code_hash": "76a2be1629f968041ff2ab83ab8de355",
       "outputs": [
         {
@@ -756,13 +895,63 @@
       "console": []
     },
     {
-      "id": "LkGn",
+      "id": "fCoF",
       "code_hash": "4dc4528702be4559a2a204232956006d",
-      "outputs": [],
-      "console": []
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Starting TEST run for 100 items...\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "\r  0%|          | 0/2 [00:00<?, ?it/s]",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Error at batch 0: \n  No API_KEY or ADC found. Please either:\n    - Set the `GOOGLE_API_KEY` environment variable.\n    - Manually pass the key with `genai.configure(api_key=my_api_key)`.\n    - Or set up Application Default Credentials, see https://ai.google.dev/gemini-api/docs/oauth for more information.\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "\r 50%|\u2588\u2588\u2588\u2588\u2588     | 1/2 [00:03<00:03,  3.13s/it]",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Error at batch 50: \n  No API_KEY or ADC found. Please either:\n    - Set the `GOOGLE_API_KEY` environment variable.\n    - Manually pass the key with `genai.configure(api_key=my_api_key)`.\n    - Or set up Application Default Credentials, see https://ai.google.dev/gemini-api/docs/oauth for more information.\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "\r100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 2/2 [00:06<00:00,  3.15s/it]\r100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 2/2 [00:06<00:00,  3.15s/it]\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Test Complete! Check 'df_test' for results.\n0    None\n1    None\n2    None\n3    None\n4    None\nName: Description_Embedding, dtype: object\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
-      "id": "zVRe",
+      "id": "LkGn",
       "code_hash": "b030af22a7a0d7ed602ad7497e62e917",
       "outputs": [
         {
@@ -775,7 +964,7 @@
       "console": []
     },
     {
-      "id": "woaO",
+      "id": "zVRe",
       "code_hash": "65f7c599ab6b89691c0115b07bdeb689",
       "outputs": [
         {
@@ -788,7 +977,7 @@
       "console": []
     },
     {
-      "id": "HnMC",
+      "id": "woaO",
       "code_hash": "bda1db6398789442d84c00027d74a3e4",
       "outputs": [
         {
@@ -801,13 +990,27 @@
       "console": []
     },
     {
-      "id": "wadT",
+      "id": "HnMC",
       "code_hash": "634f5508e7fe01c913f182b3d3437969",
-      "outputs": [],
-      "console": []
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Constants for embedding generation defined.\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
-      "id": "VCRE",
+      "id": "wadT",
       "code_hash": "ac8784ae05c689d15555af88856686cc",
       "outputs": [
         {
@@ -820,13 +1023,13 @@
       "console": []
     },
     {
-      "id": "hgqU",
+      "id": "VCRE",
       "code_hash": "39d58e819f04803be0b6e621a752b355",
       "outputs": [],
       "console": []
     },
     {
-      "id": "PSUk",
+      "id": "hgqU",
       "code_hash": "b5c024b37f9e5f58201b771566c5dfbe",
       "outputs": [
         {
@@ -839,13 +1042,27 @@
       "console": []
     },
     {
-      "id": "mfOT",
+      "id": "PSUk",
       "code_hash": "17f48d8e875c73ed34226dad57dea0df",
-      "outputs": [],
-      "console": []
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Defined embed_with_retry function.\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
-      "id": "vGiW",
+      "id": "mfOT",
       "code_hash": "58f1034ab0f3d3bd030af67310f54668",
       "outputs": [
         {
@@ -858,15 +1075,36 @@
       "console": []
     },
     {
-      "id": "SYQT",
-      "code_hash": "88072d82004f54a8961b5a785cc26da1",
-      "outputs": [],
-      "console": []
+      "id": "vGiW",
+      "code_hash": "5a8be08ec4b3308fcca140e5d15ec50b",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "name 'df_sample' is not defined",
+          "traceback": []
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;C:\\Users\\PC\\Desktop\\tests\\ds_task_lab\\.venv\\Lib\\site-packages\\marimo\\_runtime\\executor.py&quot;</span>, line <span class=\"m\">138</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"n\">exec</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">body</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~^^^^^^^^^^^^^^^^^^</span>\n  File <span class=\"nb\">&quot;C:\\Users\\PC\\AppData\\Local\\Temp\\marimo_11480\\__marimo__cell_vGiW_.py&quot;</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">descriptions_to_embed</span> <span class=\"o\">=</span> <span class=\"n\">df_sample</span><span class=\"p\">[</span><span class=\"s2\">&quot;Description&quot;</span><span class=\"p\">]</span><span class=\"o\">.</span><span class=\"n\">astype</span><span class=\"p\">(</span><span class=\"nb\">str</span><span class=\"p\">)</span><span class=\"o\">.</span><span class=\"n\">tolist</span><span class=\"p\">()</span>\n<span class=\"w\">                            </span><span class=\"pm\">^^^^^^^^^</span>\n<span class=\"gr\">NameError</span>: <span class=\"n\">name &#39;df_sample&#39; is not defined</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
     },
     {
-      "id": "bMrW",
+      "id": "SYQT",
       "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     }
   ]
