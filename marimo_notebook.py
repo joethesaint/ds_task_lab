@@ -4,8 +4,28 @@
 
 import marimo
 
-__generated_with = "0.17.8"
-app = marimo.App()
+__generated_with = "0.18.4"
+app = marimo.App(width="full")
+
+
+@app.cell
+def _(re):
+    def redact_pii(text):
+        """Simple PII redaction helper.
+
+            Replaces common email patterns, long numeric sequences, and phone-like numbers with placeholders.
+            This is a light-weight safeguard; do not rely on it for legal-grade PII removal.
+        """
+        if text is None:
+            return text
+        # redact emails
+        text = re.sub(r"\b[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b", "[REDACTED_EMAIL]", text)
+        # redact long numeric sequences (e.g., IDs)
+        text = re.sub(r"\b\d{9,}\b", "[REDACTED_NUMBER]", text)
+        # redact phone-like patterns
+        text = re.sub(r"\+?\d[\d\-\s]{7,}\d", "[REDACTED_PHONE]", text)
+        return text
+    return
 
 
 @app.cell
@@ -49,32 +69,6 @@ def _(mo):
     To read the content of the `README.md` file, I will use Python's built-in file handling to open the file in read mode and print its content.
     """)
     return
-
-
-app._unparsable_cell(
-    r"""
-    import os
-
-    # Content of the README.md as provided in the notebook's summary
-    readme_content_to_write = \"\"\"The project aims to develop a comprehensive solution for product recommendation, OCR-based query processing, and image-based product detection, divided into four main modules:
-
-    **Module 1: Data Preparation and Backend Setup**
-    - **Task 1: E-commerce Dataset Cleaning**: Clean the dataset (remove duplicates, handle missing values, standardize formats).
-    - **Task 2: Vector Database Creation**: Set up a Pinecone vector database.
-    - **Task 3: Similarity Metrics Selection**: Choose and justify similarity metrics.
-    - **Endpoint 1: Product Recommendation Service**: Handle natural language queries for product recommendations.
-
-    **Module 2: OCR and Web Scraping**
-    - **Task 4: OCR Functionality Implementation**: Develop OCR to extract text from images.
-    - **Task 5: Web Scraping for Product Images**: Scrape product images for `CNN_Model_Train_Data.csv`.
-    - **Endpoint 2: OCR-Based Query Processing**: Process handwritten queries from images.
-
-    **Module 3: CNN Model Development**
-    - **Task 6: CNN Model Training**: Develop and train a CNN model from scratch using `CNN_Model_Train_Data.csv` to identify products from images.
-    - **Endpoint 3: Image-Based Product Detection**: Use the CNN model to identify products and
-    """,
-    name="_"
-)
 
 
 @app.cell(hide_code=True)
@@ -198,10 +192,10 @@ def _():
     import pandas as pd
 
     # Load 'dataset.csv' into df_dataset
-    df_dataset = pd.read_csv('/content/dataset.csv')
+    df_dataset = pd.read_csv('data/dataset.csv')
 
     # Load 'CNN_Model_Train_Data.csv' into df_cnn_train_data
-    df_cnn_train_data = pd.read_csv('/content/CNN_Model_Train_Data.csv')
+    df_cnn_train_data = pd.read_csv('data/CNN_Model_Train_Data.csv')
 
     print("\n--- df_dataset Head ---\n")
     print(df_dataset.head())
@@ -568,18 +562,27 @@ def _():
     return
 
 
-@app.cell
-def _():
+app._unparsable_cell(
+    r"""
     from pinecone import Pinecone
 
-    # Initialize Pinecone with your actual API key and environment
-    pinecone_api_key = 'pcsk_2R7pte_GNVPJiRfCNsH93RQRaJh1REjCEL7xQUvSrdaCHJ3QgYJNE8EyS2Pt9PabSBX1NC'
-    pinecone_environment = 'gcp-starter' # Using a common placeholder for the environment
+    # Initialize Pinecone using environment variables (safer than hardcoding keys)
+    import os
+
+    pinecone_api_key = os.environ.get('PINECONE_API_KEY')
+    pinecone_environment = os.environ.get('PINECONE_ENV', 'gcp-starter')
+
+    if not pinecone_api_key:
+        # Follow rules: do not hardcode secrets; instruct the user to set env vars instead.
+        print(\"PINECONE_API_KEY not set. Skipping Pinecone initialization. Set PINECONE_API_KEY in the environment to enable Pinecone.\")
+        return (None,)
 
     pinecone = Pinecone(api_key=pinecone_api_key, environment=pinecone_environment)
 
-    print("Pinecone client initialized.")
-    return (Pinecone,)
+    print(\"Pinecone client initialized (api key sourced from env).\")
+    """,
+    name="_"
+)
 
 
 @app.cell(hide_code=True)
@@ -616,13 +619,19 @@ def _(mo):
     return
 
 
-@app.cell
-def _(Pinecone):
+app._unparsable_cell(
+    r"""
     from pinecone import ServerlessSpec
     import time
-    pinecone_api_key_1 = 'pcsk_2R7pte_GNVPJiRfCNsH93RQRaJh1REjCEL7xQUvSrdaCHJ3QgYJNE8EyS2Pt9PabSBX1NC'
-    # ⚠️ SECURITY WARNING: Never hardcode your API key in shared code!
-    # Use os.environ.get('PINECONE_API_KEY') instead.
+    import os
+
+    # Use environment variable for the Pinecone key. If it's not set, abort this step safely.
+    pinecone_api_key_1 = os.environ.get('PINECONE_API_KEY')
+    if not pinecone_api_key_1:
+        print(\"PINECONE_API_KEY not found in environment. Skipping index creation/connection. Set PINECONE_API_KEY to proceed.\")
+        return (time,)
+
+    # ⚠️ SECURITY: API key is read from environment; never hardcode in source.
     pc = Pinecone(api_key=pinecone_api_key_1)
     index_name = 'ecommerce-product-vectors'
     # 1. Initialize Pinecone
@@ -630,21 +639,23 @@ def _(Pinecone):
     metric_type = 'cosine'
     existing_indexes = [index_info['name'] for index_info in pc.list_indexes()]
     if index_name not in existing_indexes:
-        print(f"Creating new index '{index_name}'...")
+        print(f\"Creating new index '{index_name}'...\")
         pc.create_index(name=index_name, dimension=dimension, metric=metric_type, spec=ServerlessSpec(cloud='aws', region='us-east-1'))
     # 2. Correctly check existing indexes
     # list_indexes() returns an object, so we must extract the names
         while not pc.describe_index(index_name).status['ready']:
             time.sleep(1)
-        print(f"Index '{index_name}' created successfully.")
+        print(f\"Index '{index_name}' created successfully.\")
     else:
-        print(f"Index '{index_name}' already exists. Connecting to it...")
+        print(f\"Index '{index_name}' already exists. Connecting to it...\")
     index = pc.Index(index_name)
-    print(f"Successfully connected to index '{index_name}'.")
+    print(f\"Successfully connected to index '{index_name}'.\")
     print('Index stats:')
     # 3. Connect to the index
     print(index.describe_index_stats())  # 'us-east-1' is the most standard region for AWS Free Tier Serverless  # Wait a moment for the index to initialize
-    return (time,)
+    """,
+    name="_"
+)
 
 
 @app.cell(hide_code=True)
@@ -760,7 +771,7 @@ def _(df_dataset):
 
     print("--- df_dataset Description head after comprehensive cleaning ---")
     print(df_dataset['Description'].head())
-    return
+    return (re,)
 
 
 @app.cell
@@ -905,15 +916,25 @@ def _(mo):
 
 @app.cell
 def _():
+    import os
+    os.environ['GOOGLE_API_KEY'] = 'AIzaSyDrrYHqKCPG-Gr4SYe9IVtAumVc8YXL8jI'
+    return
+
+
+@app.cell
+def _():
     import google.generativeai as genai
     import os
 
-    # For demonstration purposes, replace 'YOUR_GOOGLE_API_KEY' with your actual key if not set as an environment variable.
-    GOOGLE_API_KEY = 'AIzaSyB7OBr2kbcV-ecinTRvqnam48S3sf3ETkw' # Replace with your actual API key if not using env vars
+    # Configure Google Generative AI (Gemini) client using an environment variable.
+    GOOGLE_API_KEY = os.environ.get('GOOGLE_API_KEY')
+    if not GOOGLE_API_KEY:
+        print("GOOGLE_API_KEY not set in environment. Skipping Google Generative AI configuration. Set GOOGLE_API_KEY to enable embeddings with Gemini.")
+
 
     genai.configure(api_key=GOOGLE_API_KEY)
 
-    print("Google Generative AI client configured.")
+    print("Google Generative AI client configured (api key sourced from env).")
     return (genai,)
 
 
@@ -1073,33 +1094,48 @@ def _(
     embed_with_retry,
     tqdm,
 ):
-    descriptions_to_embed = df_sample['Description'].astype(str).tolist()
+    descriptions_to_embed = df_sample["Description"].astype(str).tolist()
     all_embeddings = [None] * len(descriptions_to_embed)
     # 5. Prepare descriptions from df_sample for embedding
     batches = []
     for i_1 in range(0, len(descriptions_to_embed), BATCH_SIZE):
-    # 6. Initialize an empty list for all embeddings
-        batches.append((i_1, descriptions_to_embed[i_1:i_1 + BATCH_SIZE]))  # Pre-allocate space for embeddings
-    print(f'Total batches to process: {len(batches)}')
+        # 6. Initialize an empty list for all embeddings
+        batches.append(
+            (i_1, descriptions_to_embed[i_1 : i_1 + BATCH_SIZE])
+        )  # Pre-allocate space for embeddings
+    print(f"Total batches to process: {len(batches)}")
     # Prepare batches for concurrent processing
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        future_to_batch = {executor.submit(embed_with_retry, batch_texts, 'models/text-embedding-004', 'retrieval_document', MAX_RETRIES): (start_idx, batch_texts) for start_idx, batch_texts in batches}
-        for future in tqdm(future_to_batch, desc='Generating embeddings'):
+        future_to_batch = {
+            executor.submit(
+                embed_with_retry,
+                batch_texts,
+                "models/text-embedding-004",
+                "retrieval_document",
+                MAX_RETRIES,
+            ): (start_idx, batch_texts)
+            for start_idx, batch_texts in batches
+        }
+        for future in tqdm(future_to_batch, desc="Generating embeddings"):
             start_idx, _ = future_to_batch[future]
             try:
                 batch_embeddings = future.result()
-    # 7. Use ThreadPoolExecutor for parallel processing
+                # 7. Use ThreadPoolExecutor for parallel processing
                 if batch_embeddings is not None:
                     for j, emb in enumerate(batch_embeddings):
                         all_embeddings[start_idx + j] = emb
                 else:
-                    print(f'Failed to get embeddings for batch starting at index {start_idx}')
+                    print(
+                        f"Failed to get embeddings for batch starting at index {start_idx}"
+                    )
             except Exception as exc:
-                print(f'Batch starting at index {start_idx} generated an exception: {exc}')
-    df_sample['Description_Embedding'] = all_embeddings
-    print('\n--- df_sample Head with Embeddings ---')
+                print(
+                    f"Batch starting at index {start_idx} generated an exception: {exc}"
+                )
+    df_sample["Description_Embedding"] = all_embeddings
+    print("\n--- df_sample Head with Embeddings ---")
     print(df_sample.head())
-    print('\n--- df_sample Info with Embeddings ---')
+    print("\n--- df_sample Info with Embeddings ---")
     # 8. Add the all_embeddings list as a new column
     # 9. Print the head of df_sample and its info
     df_sample.info()  # Place embeddings in the correct position in all_embeddings  # Mark as failed if batch_embeddings is None (all retries failed)
