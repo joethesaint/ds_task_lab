@@ -83,7 +83,8 @@ Each module completion should be accompanied by a concise, to-the-point report t
 - *High-Level Flow*:
   - *Description*: Outline the main tasks and functionalities developed in the module.
   - *Diagrams*: Include flowcharts or diagrams that visually represent the architecture and data flow.
-  - *Key Decisions*: Summarize crucial decisions made during the module, such as choice of technology, design patterns, and configurations.
+  - *Key Decisions*:
+   Summarize crucial decisions made during the module, such as choice of technology, design patterns, and configurations.
 - *Challenges and Solutions*:
   - Briefly discuss any challenges faced during the module and how they were addressed.
 - *Conclusion*: Sum up the outcomes of the module and its readiness for integration with other modules.
